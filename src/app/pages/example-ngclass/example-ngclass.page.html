@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Directiva ngClass</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
+  <ion-range
+    [(ngModel)]="temperature"
+    min = "-20"
+    max="50"
+    color="danger">
+    <ion-icon slot="start" size="small" color="danger" name="thermometer"></ion-icon>
+    <ion-icon slot="end" color="danger" name="thermometer"></ion-icon>
+  </ion-range>
+  <h1
+    [ngClass]="{
+      'hot': temperature > 26,
+      'warm': (temperature <= 26) && (temperature >= 18),
+      'cold': temperature < 18
+    }">
+    {{ temperature }}
+  </h1>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Directiva ngStyle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
+  <!--ion-item-->
+    <h2 class="blue">El color de este texto es azul</h2>
+    <h2 class="blue">El color de este texto es azul</h2>
+    <h2 class="{{ color }}">Este texto es intercambiante</h2>
+  <!--/ion-item-->
+  <!--ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">example-ngstyle</ion-title>
+    </ion-toolbar>
+  </ion-header-->
+  <ion-button (click)="setColor('blue')" color="primary">Azul</ion-button>
+  <ion-button (click)="setColor('green')" color="success">Verde</ion-button>
+  <ion-button (click)="setColor('red')" color="danger">Rojo</ion-button>
+    <!---->
+</ion-content>
